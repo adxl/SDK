@@ -1,0 +1,19 @@
+version: '3'
+services:
+  oauth-esgi-server:
+    image: php:alpine
+    volumes:
+      - ./src/providers/esgi/server:/home/root
+    working_dir: /home/root
+    ports:
+      - 8081:8081
+    command: "php -S 0.0.0.0:8081"
+
+  oauth-clients:
+    build: ./src
+    volumes:
+      - ./src/providers:/home/root
+    working_dir: /home/root
+    ports:
+      - 80:80
+      - 443:443
