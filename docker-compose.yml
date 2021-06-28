@@ -10,9 +10,9 @@ services:
     command: "php -S 0.0.0.0:8081"
 
   oauth-clients:
-    build: ./src
+    build: ./app
     volumes:
-      - ./src/providers:/home/root
+      - ./app:/home/root
     working_dir: /home/root
     ports:
       - 80:80

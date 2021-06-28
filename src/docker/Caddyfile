@@ -1,7 +1,0 @@
-localhost
-
-root * /home/root
-
-php_fastcgi unix//var/run/php-fpm.sock
-
-rewrite * /index.php/{path}?{query}
