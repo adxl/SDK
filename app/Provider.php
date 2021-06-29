@@ -1,6 +1,6 @@
 <?php
 
-use Provider as ProviderInterface;
+require "ProviderInterface.php";
 
 class Provider implements ProviderInterface
 {
@@ -19,5 +19,20 @@ class Provider implements ProviderInterface
         $this->route = $route;
         $this->url = $url;
         $this->redirectUrl = $redirectUrl;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    public function getRoute()
+    {
+        return $this->route;
     }
 }

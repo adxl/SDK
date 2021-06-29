@@ -1,6 +1,6 @@
 <?php
 
-class Generator
+class SDK
 {
     private array $providers;
 
@@ -9,8 +9,9 @@ class Generator
         $this->providers = $providers;
     }
 
-    public function getProviders(): array
+    public function __destruct()
     {
-        return $this->providers;
+        $providers = $this->providers;
+        include "view.php";
     }
 }

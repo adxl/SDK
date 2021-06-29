@@ -17,12 +17,15 @@
                     <h5 class="card-title">Connectez-vous</h5>
                     <p class="card-text">Pour accéder à votre compte</p>
                 </div>
+
                 <div class="d-flex justify-content-around" style="height: 50px;">
-                    <a href="#" title="Name"><img class="h-100" src="assets/fb.png"></a>
-                    <a href="#" title="Name"><img class="h-100" src="assets/google.png"></a>
-                    <a href="#" title="Name"><img class="h-100" src="assets/github.png"></a>
-                    <a href="#" title="Name"><img class="h-100" src="assets/fo.png"></a>
+                    <?php foreach ($providers as $p) : ?>
+                        <a href="<?= $p->getRoute(); ?>" title="<?= $p->getName(); ?>">
+                            <img class="h-100" src="<?= "assets/" . $p->getLogo(); ?>">
+                        </a>
+                    <?php endforeach ?>
                 </div>
+
             </div>
             <div class="card-footer text-muted">
                 2021 &copy Adel Senhadji & Maxime Marchand - ESGI

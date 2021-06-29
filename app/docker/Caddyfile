@@ -4,6 +4,6 @@ root * /home/root
 try_files {path} /index.php
 file_server
 
-# php_fastcgi unix//var/run/php-fpm.sock
+php_fastcgi unix//var/run/php-fpm.sock
 
 
