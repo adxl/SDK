@@ -1,5 +1,5 @@
 <?php
-
+/* 
 function read_file($filename)
 {
     if (!file_exists($filename)) {
