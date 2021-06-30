@@ -20,7 +20,7 @@
 
                 <div class="d-flex justify-content-around" style="height: 50px;">
                     <?php foreach ($providers as $p) : ?>
-                        <a href="<?= $p->getRoute(); ?>" title="<?= $p->getName(); ?>">
+                        <a href="<?= '/?p=' . $p->getName(); ?>" title="<?= $p->getName(); ?>">
                             <img class="h-100" src="<?= "assets/" . $p->getLogo(); ?>">
                         </a>
                     <?php endforeach ?>

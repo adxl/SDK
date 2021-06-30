@@ -1,13 +1,20 @@
 <?php
 
-namespace App;
+include 'Provider.php';
 
-use App\Providers\Facebook\FacebookProvider;
-use App\Providers\Google\GoogleProvider;
-use App\Providers\Github\GithubProvider;
-use App\Providers\FireAuth\FireAuthProvider;
+include 'providers/FacebookProvider.php';
+include 'providers/GoogleProvider.php';
+include 'providers/GithubProvider.php';
+include 'providers/FireAuthProvider.php';
 
-use App\SDK;
+include 'SDK.php';
+
+if (isset($_GET['p'])) {
+    $providerName = $_GET['p'] . 'Provider';
+    $provider = new $providerName();
+    die($provider->getName());
+}
+
 
 $providers = [
     new FacebookProvider(),
