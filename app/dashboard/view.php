@@ -14,16 +14,10 @@
         <div class="card text-center">
             <div class="card-body">
                 <div class="mb-5">
-                    <h5 class="card-title">Connectez-vous</h5>
-                    <p class="card-text">Pour accéder à votre compte</p>
+                    <h5 class="card-title">Bienvenue</h5>
+                    <p class="card-text"><?= $username; ?></p>
                 </div>
-                <div class="d-flex justify-content-around" style="height: 50px;">
-                    <?php foreach ($providers as $p) : ?>
-                        <a href="<?= '/?p=' . $p->name; ?>" title="<?= $p->name; ?>">
-                            <img class="h-100" src="<?= "assets/" . $p->logo; ?>">
-                        </a>
-                    <?php endforeach ?>
-                </div>
+                <img src="<?= $picture; ?>" class="rounded-circle" alt="user" style="max-width: 200px;">
             </div>
             <div class="card-footer text-muted">
                 2021 &copy Adel Senhadji & Maxime Marchand - ESGI
