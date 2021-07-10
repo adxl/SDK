@@ -1,7 +1,10 @@
 <?php
 
-include 'Provider.php';
+session_start();
 
+include 'dashboard/dashboard.php';
+
+include 'Provider.php';
 include 'providers/FacebookProvider.php';
 include 'providers/GoogleProvider.php';
 include 'providers/GithubProvider.php';
@@ -9,10 +12,32 @@ include 'providers/FireAuthProvider.php';
 
 include 'SDK.php';
 
+
 if (isset($_GET['p'])) {
-    $providerName = $_GET['p'] . 'Provider';
-    $provider = new $providerName();
-    die($provider->getName());
+    $state = uniqid();
+    $code = $_SESSION['code'];
+
+    $provider = $_GET['p'] . 'Provider';
+    $p = new $provider();
+
+    if (!isset($code)) {
+        $p->showForm();
+        return;
+    }
+
+    $token = $p->getToken($state, $code);
+    if (!isset($token)) {
+        die('token error');
+    }
+
+    $user = $p->getUser($token);
+    if (!isset($user)) {
+        die('user not found');
+    }
+
+    new Dashboard($user['name'], $user['picture']);
+
+    session_unset();
 }
 
 
@@ -23,4 +48,4 @@ $providers = [
     new FireAuthProvider(),
 ];
 
-$sdk = new SDK($providers);
+new SDK($providers);
