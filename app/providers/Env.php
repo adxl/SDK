@@ -6,7 +6,10 @@ class Env
 
     public static function getFacebookEnv()
     {
-        return [];
+        return [
+            'client_id' => '840316776603368',
+            'client_secret' => '9771f095c09afdd4a48fe7a7b2baceff'
+        ];
     }
 
     public static function getGoogleEnv()
