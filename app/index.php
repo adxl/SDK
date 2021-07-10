@@ -6,24 +6,26 @@ include 'dashboard/dashboard.php';
 
 include 'Provider.php';
 include 'providers/FacebookProvider.php';
-include 'providers/GoogleProvider.php';
+// include 'providers/GoogleProvider.php';
 include 'providers/GithubProvider.php';
-include 'providers/FireAuthProvider.php';
+// include 'providers/FireAuthProvider.php';
 
 include 'SDK.php';
 
 
 if (isset($_GET['p'])) {
     $state = uniqid();
-    $code = $_SESSION['code'];
+    $code = $_SESSION['code'] ?? NULL;
 
     $provider = $_GET['p'] . 'Provider';
     $p = new $provider();
 
     if (!isset($code)) {
-        $p->showForm();
+        $p->showForm($state);
         return;
     }
+
+    unset($_SESSION['code']);
 
     $token = $p->getToken($state, $code);
     if (!isset($token)) {
@@ -43,9 +45,9 @@ if (isset($_GET['p'])) {
 
 $providers = [
     new FacebookProvider(),
-    new GoogleProvider(),
+    // new GoogleProvider(),
     new GithubProvider(),
-    new FireAuthProvider(),
+    // new FireAuthProvider(),
 ];
 
 new SDK($providers);

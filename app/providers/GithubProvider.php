@@ -13,24 +13,18 @@ class GithubProvider extends Provider implements ProviderInterface
             'https://github.com/login/oauth/authorize',
             'https://github.com/login/oauth/access_token',
             'https://api.github.com/user',
-            'https://localhost/login.php'
         );
 
         $this->env = Env::getGithubEnv();
     }
 
-    function getName()
-    {
-        die('i am github provider');
-    }
-
-    function showForm()
+    function showForm($state)
     {
         header('Location: ' . $this->authorization_url .
             '?' . http_build_query([
                 'client_id' => $this->env['client_id'],
-                'redirect_uri' => $this->redirec_url,
-                'state' => $_SESSION['state']
+                'redirect_uri' => $this->redirect_url,
+                'state' => $state
             ]));
     }
 
