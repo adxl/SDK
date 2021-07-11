@@ -2,8 +2,8 @@
 
 class Dashboard
 {
-    private string $username;
-    private string $picture;
+    private $username;
+    private $picture;
 
     public function __construct($username, $picture)
     {
