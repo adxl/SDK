@@ -27,6 +27,9 @@ class Env
 
     public static function getFireAuthEnv()
     {
-        return [];
+        return [
+            'client_id' => '60eb321b2341f',
+            'client_secret' => '89b3b3bb0bcb7650a09e35fe742a15083bba563c'
+        ];
     }
 }

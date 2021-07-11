@@ -14,13 +14,18 @@
         <div class="card text-center">
             <div class="card-body">
                 <div class="mb-5">
-                    <h5 class="card-title">Bienvenue</h5>
-                    <p class="card-text"><?= $username; ?></p>
+                    <div class="d-flex justify-content-center align-items-center mb-5">
+                        <img width="80" src="./assets/anonymous_avatar.png">
+                        <h3 class="text-muted mx-3 mb-0">x</h3>
+                        <img width="80" src="./assets/fireauth.png">
+                    </div>
+                    <h5 class="card-title"><?= $app_name ?></h5>
+                    <p>Veut accéder à votre compte via FireAuth</p>
                 </div>
-                <img src="<?= $picture ?? './assets/avatar.png' ?>" class="rounded-circle" alt="user" style="max-width: 200px;">
-            </div>
-            <div class="card-footer text-muted">
-                2021 &copy Adel Senhadji & Maxime Marchand - ESGI
+                <div class="d-flex justify-content-around" style="height: 50px;">
+                    <a href="<?= $success_uri ?>">Autoriser</a>
+                    <a href="<?= $cancel_uri ?>" class='text-danger'>Annuler</a>
+                </div>
             </div>
         </div>
     </main>

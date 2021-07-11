@@ -3,7 +3,7 @@ services:
   oauth-esgi-server:
     image: php:alpine
     volumes:
-      - ./src/providers/esgi/server:/home/root
+      - ./app/servers/fireauth/server:/home/root
     working_dir: /home/root
     ports:
       - 8081:8081
