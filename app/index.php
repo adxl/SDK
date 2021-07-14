@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 
 include 'Provider.php';
 include 'providers/FacebookProvider.php';
-// include 'providers/GoogleProvider.php';
+include 'providers/GoogleProvider.php';
 include 'providers/GithubProvider.php';
 include 'providers/FireAuthProvider.php';
 
@@ -25,7 +25,7 @@ if (isset($_GET['p'])) {
 
 $providers = [
     new FacebookProvider(),
-    // new GoogleProvider(),
+    new GoogleProvider(),
     new GithubProvider(),
     new FireAuthProvider(),
 ];

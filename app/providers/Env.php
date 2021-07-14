@@ -14,7 +14,10 @@ class Env
 
     public static function getGoogleEnv()
     {
-        return [];
+        return [
+            'client_id' => '936724049928-5dtg6aip3f23nj6fueglma713vja9uv9.apps.googleusercontent.com',
+            'client_secret' => '61E_WhIwXcEjmBwrfBhtVAtV'
+        ];
     }
 
     public static function getGithubEnv()

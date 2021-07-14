@@ -2,7 +2,7 @@
 
 include 'Provider.php';
 include 'providers/FacebookProvider.php';
-// include 'providers/GoogleProvider.php';
+include 'providers/GoogleProvider.php';
 include 'providers/GithubProvider.php';
 include 'providers/FireAuthProvider.php';
 
