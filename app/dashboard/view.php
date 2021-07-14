@@ -10,17 +10,17 @@
 </head>
 
 <body>
-    <main class="container h-100 d-flex justify-content-center align-items-center">
-        <div class="card text-center">
+    <main class="container w-25 h-100 d-flex justify-content-center align-items-center">
+        <div class="card w-100 text-center">
             <div class="card-body">
                 <div class="mb-5">
                     <h5 class="card-title">Bienvenue</h5>
                     <p class="card-text"><?= $username; ?></p>
                 </div>
-                <img src="<?= $picture ?? './assets/avatar.png' ?>" class="rounded-circle" alt="user" style="max-width: 200px;">
+                <img src="<?= $picture ?? './assets/avatar.png' ?>" class="rounded-circle" alt="user" style="width: 200px;">
             </div>
             <div class="card-footer text-muted">
-                2021 &copy Adel Senhadji & Maxime Marchand - ESGI
+                <a href="/">Se déconnecter</a>
             </div>
         </div>
     </main>
